@@ -6,10 +6,12 @@ import Blob from '@/components/illustrations/Blob';
 import Droplet from '@/components/illustrations/Droplet';
 import Features from '@/components/Features';
 import HourGlass from '@/components/illustrations/HourGlass';
+import JoinButton from '@/components/JoinButton';
 import Logo from '@/components/illustrations/Logo';
 import Rectangles from '@/components/illustrations/Rectangles';
 import Star from '@/components/illustrations/Star';
 import StarTwo from '@/components/illustrations/StarTwo';
+import WalletButton from '@/components/WalletButton';
 // icons
 import LinkedInIcon from '../assets/icons/linkedin.svg';
 import TwitterIcon from '../assets/icons/twitter.svg';
@@ -30,9 +32,7 @@ export default function Home() {
             <Link href="/blog" className="text-beige">
               Blog
             </Link>
-            <button className="bg-pink-500 hover:bg-pink-700 px-4 py-2 rounded-xl">
-              Connect
-            </button>
+            <WalletButton />
           </nav>
 
           <div className="flex flex-col self-center relative w-full max-h-[80vh] aspect-square">
@@ -155,9 +155,7 @@ export default function Home() {
                 the decentralized digital space. Join now and embark on your
                 blockchain blogging journey.
               </p>
-              <button className="w-full bg-purple-500 hover:bg-purple-700 px-8 py-3 rounded-xl mt-8">
-                Join Today
-              </button>
+              <JoinButton />
             </div>
           </div>
         </div>
