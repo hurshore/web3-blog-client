@@ -7,11 +7,10 @@ import Droplet from '@/components/illustrations/Droplet';
 import Features from '@/components/Features';
 import HourGlass from '@/components/illustrations/HourGlass';
 import JoinButton from '@/components/JoinButton';
-import Logo from '@/components/illustrations/Logo';
+import Navigation from '@/components/Navigation';
 import Rectangles from '@/components/illustrations/Rectangles';
 import Star from '@/components/illustrations/Star';
 import StarTwo from '@/components/illustrations/StarTwo';
-import WalletButton from '@/components/WalletButton';
 // icons
 import LinkedInIcon from '../assets/icons/linkedin.svg';
 import TwitterIcon from '../assets/icons/twitter.svg';
@@ -22,18 +21,7 @@ export default function Home() {
     <main className="flex flex-col">
       <section className="flex w-full justify-center bg-purple-500">
         <div className="flex flex-col relative w-full max-w-6xl p-8">
-          <nav className="flex justify-between items-center w-full py-4">
-            <Link href="/" className="text-beige">
-              <Logo />
-            </Link>
-            <Link href="/" className="text-beige">
-              Home
-            </Link>
-            <Link href="/blog" className="text-beige">
-              Blog
-            </Link>
-            <WalletButton />
-          </nav>
+          <Navigation />
 
           <div className="flex flex-col self-center relative w-full max-h-[80vh] aspect-square">
             <div className="flex h-1/2 justify-center">

@@ -6,24 +6,24 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      beige: '#e3bdae',
-      pink: {
-        100: 'rgb(234, 205, 194)',
-        500: 'rgb(183, 93, 105)',
-        700: 'rgb(142, 58, 67)',
-      },
-      purple: {
-        300: '#4B3364',
-        500: '#372549',
-        700: '#1A1423',
-      },
-      white: '#fff',
-    },
-    fontFamily: {
-      margarine: ['Margarine', 'sans-serif'],
-    },
     extend: {
+      colors: {
+        beige: '#e3bdae',
+        pink: {
+          100: 'rgb(234, 205, 194)',
+          500: 'rgb(183, 93, 105)',
+          700: 'rgb(142, 58, 67)',
+        },
+        purple: {
+          300: '#4B3364',
+          500: '#372549',
+          700: '#1A1423',
+        },
+        white: '#fff',
+      },
+      fontFamily: {
+        margarine: ['Margarine', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
