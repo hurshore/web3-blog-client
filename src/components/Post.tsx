@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Tag from './Tag';
+import { getDayMonthYear } from '@/util/date';
 
 interface Post {
   id: number;
@@ -14,10 +15,7 @@ interface Props {
 }
 
 export default ({ post }: Props) => {
-  const date = new Date(post.timestamp);
-  let day: number | string = date.getDate();
-  const month = date.toLocaleString('default', { month: 'short' });
-  if (day < 10) day = '0' + day;
+  const { day, month } = getDayMonthYear(post.timestamp);
 
   return (
     <article className="flex mb-8">

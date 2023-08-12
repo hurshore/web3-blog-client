@@ -6,11 +6,11 @@ import Blob from '@/components/illustrations/Blob';
 import Droplet from '@/components/illustrations/Droplet';
 import Features from '@/components/Features';
 import HourGlass from '@/components/illustrations/HourGlass';
-import JoinButton from '@/components/JoinButton';
 import Navigation from '@/components/Navigation';
 import Rectangles from '@/components/illustrations/Rectangles';
 import Star from '@/components/illustrations/Star';
 import StarTwo from '@/components/illustrations/StarTwo';
+import { JoinButton } from '@/components/buttons';
 // icons
 import LinkedInIcon from '../assets/icons/linkedin.svg';
 import TwitterIcon from '../assets/icons/twitter.svg';

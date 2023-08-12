@@ -1,7 +1,7 @@
 'use client';
-import ConnectButton from './ConnectButton';
 import useConnectWallet from '@/hooks/useConnectWallet';
 import Wallet from './Wallet';
+import { ConnectButton } from './buttons';
 
 export default () => {
   const { currentAccount, connectWallet } = useConnectWallet();
