@@ -1,21 +1,16 @@
 import Link from 'next/link';
 import Tag from './Tag';
 import { getDayMonthYear } from '@/util/date';
-
-interface Post {
-  id: number;
-  title: string;
-  content: string;
-  timestamp: string;
-  tags: string[];
-}
+import { Post } from '@/models/Blog';
 
 interface Props {
   post: Post;
 }
 
 export default ({ post }: Props) => {
-  const { day, month } = getDayMonthYear(post.timestamp);
+  const { day, month } = getDayMonthYear(
+    new Date(post.timestamp).toDateString()
+  );
 
   return (
     <article className="flex mb-8">
