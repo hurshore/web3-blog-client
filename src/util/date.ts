@@ -6,3 +6,7 @@ export const getDayMonthYear = (dateString: string) => {
   if (day < 10) day = '0' + day;
   return { day, month, year };
 };
+
+export const getPostDate = (timestamp: number) => {
+  return getDayMonthYear(new Date(timestamp).toDateString());
+};
