@@ -1,9 +1,13 @@
 'use client';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
+import ResizeableTextInput from '@/components/ResizeableTextInput';
 import SubmitButton from '@/components/buttons/SubmitButton';
 import useBooleanState from '@/hooks/useBooleanState';
 import { getEthereumContract } from '@/util/eth';
+import { ERRORS, Routes } from '@/constants';
 
 enum Placeholders {
   Title = 'Title',
@@ -14,12 +18,11 @@ const buttonText = 'Publish';
 export default () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [height, setHeight] = useState<number>();
   const [isLoading, startLoading, stopLoading] = useBooleanState();
+  const router = useRouter();
 
-  const onContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setHeight(e.target.scrollHeight);
-    setContent(e.target.value);
+  const onContentChange = (value: string) => {
+    setContent(value);
   };
 
   const onTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,8 +31,7 @@ export default () => {
 
   const publishPost = async () => {
     if (!postIsValid()) {
-      // TODO: show error message
-      alert('Please fill out all fields');
+      toast(ERRORS.INCOMPLETE_FIELDS, { type: 'error' });
       return;
     }
 
@@ -39,10 +41,10 @@ export default () => {
       const tx = await contract?.createPost(title, content);
       await tx.wait();
       stopLoading();
-      // TODO: go to blog page
+      router.push(Routes.Blog);
     } catch (error) {
       stopLoading();
-      console.log(error);
+      toast(ERRORS.GENERIC, { type: 'error' });
     }
   };
 
@@ -59,10 +61,8 @@ export default () => {
           onChange={onTitleChange}
           value={title}
         />
-        <textarea
-          className="w-full px-8 mb-4 text-xl bg-transparent outline-none resize-none"
+        <ResizeableTextInput
           placeholder={Placeholders.Content}
-          style={{ height: `${height}px` }}
           onChange={onContentChange}
           value={content}
         />
