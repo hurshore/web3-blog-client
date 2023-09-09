@@ -3,7 +3,7 @@ import useConnectWallet from '@/hooks/useConnectWallet';
 import Wallet from './Wallet';
 import { ConnectButton } from './buttons';
 
-export default () => {
+const WalletButton = () => {
   const { currentAccount, connectWallet } = useConnectWallet();
 
   return currentAccount ? (
@@ -12,3 +12,5 @@ export default () => {
     <ConnectButton connectWallet={connectWallet} />
   );
 };
+
+export default WalletButton;

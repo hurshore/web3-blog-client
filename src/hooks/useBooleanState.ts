@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default (initialState = false) => {
+const useBooleanState = (initialState = false) => {
   const [state, setState] = useState(initialState);
 
   const setTrue = () => setState(true);
@@ -9,3 +9,5 @@ export default (initialState = false) => {
 
   return [state, setTrue, setFalse, toggle] as const;
 };
+
+export default useBooleanState;

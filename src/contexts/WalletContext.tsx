@@ -10,19 +10,19 @@ declare global {
   }
 }
 
-interface WalletContextType {
+type WalletContextType = {
   currentAccount: string | null;
   connectWallet: () => void;
-}
+};
 
 const initialState: WalletContextType = {
   currentAccount: null,
   connectWallet: () => {},
 };
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 export const WalletContext = createContext<WalletContextType>(initialState);
 const storageValue = 'inject';

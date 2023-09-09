@@ -3,7 +3,7 @@ import Logo from '@/components/illustrations/Logo';
 import WalletButton from '@/components/WalletButton';
 import WriteLink from './WriteLink';
 
-export default () => (
+const Navigation = () => (
   <nav className="flex justify-between items-center w-full py-4">
     <Link href="/" className="text-beige">
       <Logo />
@@ -18,3 +18,5 @@ export default () => (
     <WalletButton />
   </nav>
 );
+
+export default Navigation;

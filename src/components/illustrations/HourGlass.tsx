@@ -1,4 +1,4 @@
-export default () => (
+const HourGlass = () => (
   <div
     className="w-1/4 aspect-square mr-8 bg-gradient-to-r from-pink-100 to-pink-500"
     style={{ clipPath: 'url(#curve-Z9YzbaZKC-1lwkdi8)' }}
@@ -14,3 +14,5 @@ export default () => (
     </svg>
   </div>
 );
+
+export default HourGlass;

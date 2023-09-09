@@ -6,7 +6,7 @@ type Props = {
   onClick: () => void;
 };
 
-export default ({ isLoading = false, title, onClick }: Props) => {
+const SubmitButton = ({ isLoading = false, title, onClick }: Props) => {
   title = isLoading ? 'Loading...' : title;
   return (
     <div className="flex self-center w-full max-w-[500px] mt-16">
@@ -19,3 +19,5 @@ export default ({ isLoading = false, title, onClick }: Props) => {
     </div>
   );
 };
+
+export default SubmitButton;

@@ -1,4 +1,4 @@
-export default () => (
+const Droplet = () => (
   <div
     className="w-20 h-20 bg-white"
     style={{ clipPath: 'url(#curve-Z6j56I0Td-2qgtm7)' }}
@@ -14,3 +14,5 @@ export default () => (
     </svg>
   </div>
 );
+
+export default Droplet;

@@ -3,11 +3,11 @@ import Tag from './Tag';
 import { getPostDate } from '@/util/date';
 import { Post } from '@/models/Blog';
 
-interface Props {
+type Props = {
   post: Post;
-}
+};
 
-export default ({ post }: Props) => {
+const Post = ({ post }: Props) => {
   const { day, month } = getPostDate(post.timestamp);
 
   return (
@@ -32,3 +32,5 @@ export default ({ post }: Props) => {
     </article>
   );
 };
+
+export default Post;

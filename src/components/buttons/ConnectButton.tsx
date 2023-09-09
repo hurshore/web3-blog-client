@@ -1,8 +1,8 @@
 'use client';
 
-interface Props {
+type Props = {
   connectWallet: () => void;
-}
+};
 
 const ConnectButton = ({ connectWallet }: Props) => (
   <button

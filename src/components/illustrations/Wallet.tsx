@@ -1,4 +1,4 @@
-export default () => (
+const Wallet = () => (
   <div className="w-6 h-6 overflow-hidden rounded-full">
     <svg x="0" y="0" width="24" height="24">
       <rect
@@ -28,3 +28,5 @@ export default () => (
     </svg>
   </div>
 );
+
+export default Wallet;

@@ -1,9 +1,9 @@
-interface Props {
+type Props = {
   fromColor: string;
   toColor: string;
-}
+};
 
-export default ({ fromColor, toColor }: Props) => (
+const Asterisk = ({ fromColor, toColor }: Props) => (
   <div
     className={`w-full h-full bg-gradient-to-br from-${fromColor} to-${toColor}`}
     style={{ clipPath: 'url(#curve-XXKLHy6lD-88sn5i)' }}
@@ -19,3 +19,5 @@ export default ({ fromColor, toColor }: Props) => (
     </svg>
   </div>
 );
+
+export default Asterisk;

@@ -7,7 +7,7 @@ type Props = Omit<TextAreaProps, 'onChange'> & {
   onChange: (val: string) => void;
 };
 
-export default ({ className, onChange, ...otherProps }: Props) => {
+const ResizeableTextInput = ({ className, onChange, ...otherProps }: Props) => {
   const [height, setHeight] = useState<number>();
 
   const onContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -27,3 +27,5 @@ export default ({ className, onChange, ...otherProps }: Props) => {
     />
   );
 };
+
+export default ResizeableTextInput;

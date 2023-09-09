@@ -1,4 +1,4 @@
-export default () => (
+const Blob = () => (
   <div
     className="w-1/4 aspect-square bg-gradient-to-br from-pink-500 to-pink-100"
     style={{ clipPath: 'url(#curve-Nwx3qP11i-s19y9)' }}
@@ -14,3 +14,5 @@ export default () => (
     </svg>
   </div>
 );
+
+export default Blob;

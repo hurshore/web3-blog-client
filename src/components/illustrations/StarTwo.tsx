@@ -1,4 +1,4 @@
-export default () => (
+const StarTwo = () => (
   <div
     className="w-full h-full bg-gradient-to-br from-purple-300 to-purple-700"
     style={{ clipPath: 'url(#curve-wjhs2ozZ5-1k99ap5)' }}
@@ -14,3 +14,5 @@ export default () => (
     </svg>
   </div>
 );
+
+export default StarTwo;

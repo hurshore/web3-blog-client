@@ -1,7 +1,7 @@
 'use client';
 import useConnectWallet from '@/hooks/useConnectWallet';
 
-export default () => {
+const JoinButton = () => {
   const { connectWallet } = useConnectWallet();
   return (
     <button
@@ -12,3 +12,5 @@ export default () => {
     </button>
   );
 };
+
+export default JoinButton;

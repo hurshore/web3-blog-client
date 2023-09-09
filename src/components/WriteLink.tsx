@@ -8,7 +8,7 @@ import { Routes } from '@/constants';
 import WriteImage from '../assets/icons/write.svg';
 
 const imageAlt = 'write';
-export default () => {
+const WriteLink = () => {
   const router = useRouter();
   const { currentAccount, connectWallet } = useConnectWallet();
 
@@ -24,3 +24,5 @@ export default () => {
     </div>
   );
 };
+
+export default WriteLink;

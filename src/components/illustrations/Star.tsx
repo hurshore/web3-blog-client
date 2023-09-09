@@ -1,4 +1,4 @@
-export default () => (
+const Star = () => (
   <div
     className="w-1/4 aspect-square mx-8 bg-gradient-to-br from-pink-100 to-pink-500"
     style={{ clipPath: 'url(#curve-QeOWw2PWl-22y5c1)' }}
@@ -14,3 +14,5 @@ export default () => (
     </svg>
   </div>
 );
+
+export default Star;

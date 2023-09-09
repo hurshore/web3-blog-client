@@ -1,4 +1,4 @@
-export default () => (
+const Rectangles = () => (
   <div
     className="w-1/4 aspect-square bg-gradient-to-br from-pink-100 to-pink-500"
     style={{ clipPath: 'url(#curve-y_4xcmYLT-1g3c4m2)' }}
@@ -14,3 +14,5 @@ export default () => (
     </svg>
   </div>
 );
+
+export default Rectangles;
