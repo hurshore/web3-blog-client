@@ -13,7 +13,7 @@ const fetchPosts = async (): Promise<PostModel[]> => {
   return posts.reverse();
 };
 
-export default () => {
+const BlogPage = () => {
   const { data: posts } = useSWR('/posts', fetchPosts);
 
   return (
@@ -22,8 +22,10 @@ export default () => {
         All Works
       </h1>
       {posts?.map((post) => (
-        <Post key={post.title} post={post} />
+        <Post key={post.id} post={post} />
       ))}
     </section>
   );
 };
+
+export default BlogPage;

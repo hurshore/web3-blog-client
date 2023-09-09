@@ -5,10 +5,10 @@ const features = [
   'Transparent Donations',
 ];
 
-export default () => (
+const Features = () => (
   <div>
     {features.map((feature, index) => (
-      <div key={index} className="">
+      <div key={feature} className="">
         <p>{feature}</p>
         {index !== features.length - 1 && (
           <div className="h-px bg-purple-300 my-3" />
@@ -17,3 +17,5 @@ export default () => (
     ))}
   </div>
 );
+
+export default Features;

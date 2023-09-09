@@ -13,7 +13,7 @@ export const toPost = (post: Post) => ({
   content: post.content,
   author: post.author,
   timestamp: parseInt(post.timestamp.toString()) * 1000,
-  tags: [],
+  tags: post.tags,
 });
 
 export const toPosts = (posts: any[]) => {
