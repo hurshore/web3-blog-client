@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { toast } from 'react-toastify';
 
 import ResizeableTextInput from '@/components/ResizeableTextInput';
 import SubmitButton from '@/components/buttons/SubmitButton';
@@ -9,6 +8,7 @@ import Tag from '@/components/Tag';
 import useBooleanState from '@/hooks/useBooleanState';
 import { getEthereumContract } from '@/util/eth';
 import { ERRORS, Routes } from '@/constants';
+import { displayError } from '@/util/toast';
 
 enum Placeholders {
   Title = 'Title',
@@ -63,11 +63,6 @@ const WritePage = () => {
 
   const deleteTag = (tag: string) => {
     setBody({ ...body, tags: body.tags.filter((t) => t !== tag) });
-  };
-
-  const displayError = (msg?: string) => {
-    msg = msg || ERRORS.GENERIC;
-    toast(msg, { type: 'error' });
   };
 
   const publishPost = async () => {

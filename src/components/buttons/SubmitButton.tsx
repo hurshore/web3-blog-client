@@ -1,22 +1,31 @@
 'use client';
+import { cn } from '@/util/style';
 
-type Props = {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+type Props = ButtonProps & {
   isLoading?: boolean;
   title: string;
   onClick: () => void;
 };
 
-const SubmitButton = ({ isLoading = false, title, onClick }: Props) => {
+const SubmitButton = ({
+  className,
+  isLoading = false,
+  title,
+  onClick,
+}: Props) => {
   title = isLoading ? 'Loading...' : title;
   return (
-    <div className="flex self-center w-full max-w-[500px] mt-16">
-      <button
-        className="w-full bg-pink-500 hover:bg-pink-700 px-8 py-3 rounded-xl"
-        onClick={onClick}
-      >
-        {title}
-      </button>
-    </div>
+    <button
+      className={cn(
+        'w-full max-w-lg mx-auto mt-16 bg-pink-500 hover:bg-pink-700 px-8 py-3 rounded-xl',
+        className
+      )}
+      onClick={onClick}
+    >
+      {title}
+    </button>
   );
 };
 

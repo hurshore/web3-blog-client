@@ -1,9 +1,13 @@
 'use client';
 import useSWR from 'swr';
 
-import { SupportButton } from '@/components/buttons';
-import { getPostDate } from '@/util/date';
+import SubmitButton from '@/components/buttons/SubmitButton';
+import SupportModal from '@/components/SupportModal';
+import useBooleanState from '@/hooks/useBooleanState';
+import useConnectWallet from '@/hooks/useConnectWallet';
 import { getEthereumContract } from '@/util/eth';
+import { areStringsEqual } from '@/util/string';
+import { getPostDate } from '@/util/date';
 import { Post } from '@/models/Blog';
 import { toPost } from '@/dtos/post';
 
@@ -18,12 +22,19 @@ const fetchPost = async (id: number): Promise<Post> => {
   return post;
 };
 
-export default ({ params }: Props) => {
+const buttonText = 'Support Creator';
+
+const PostPage = ({ params }: Props) => {
+  const [isModalOpen, openModal, closeModal] = useBooleanState();
+  const { currentAccount } = useConnectWallet();
   const { data: post } = useSWR(`/post/${params.id}`, () =>
     fetchPost(parseInt(params.id))
   );
   if (!post) return null;
   const { day, month, year } = getPostDate(post.timestamp);
+  const isAuthor = currentAccount
+    ? areStringsEqual(currentAccount, post.author)
+    : false;
 
   return (
     <div className="flex flex-col">
@@ -44,7 +55,14 @@ export default ({ params }: Props) => {
         </section>
         <p>{post.content}</p>
       </article>
-      <SupportButton />
+      {!isAuthor && <SubmitButton title={buttonText} onClick={openModal} />}
+      <SupportModal
+        author={post.author}
+        isVisible={isModalOpen}
+        onClose={closeModal}
+      />
     </div>
   );
 };
+
+export default PostPage;
