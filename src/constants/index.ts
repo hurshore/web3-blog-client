@@ -4,11 +4,12 @@ export enum StorageKeys {
 
 export enum Routes {
   Blog = '/blog',
+  Home = '/',
   Write = '/blog/write',
 }
 
-export const CONTRACT_ADDRESS = '0x75Eb1873498522202173fBc5620263D0365a94B5';
-export const CHAIN_ID = 1337n;
+export const CONTRACT_ADDRESS = '0x01e9118E7faa905C4367Ece944D0f1676d41CAfb';
+export const CHAIN_ID = 11155111n;
 
 export const ERRORS = {
   GENERIC: 'Something went wrong',

@@ -23,9 +23,11 @@ const Post = ({ post }: Props) => {
           <h2 className="font-margarine text-beige mb-2">{post.title}</h2>
         </Link>
         <p className="text-xs md:text-sm line-clamp-6">{post.content}</p>
-        <div className="flex mt-2">
+        <div className="flex flex-wrap">
           {post.tags.map((tag) => (
-            <Tag key={tag} tag={tag} />
+            <div key={tag} className="mt-2">
+              <Tag tag={tag} />
+            </div>
           ))}
         </div>
       </div>
